@@ -1,0 +1,138 @@
+
+body{
+    width: 640px;height: 640px;
+    position: relative;
+    top:0px;
+    left:0px;
+    padding:0px 0px;
+    margin:0px 0px;
+    background-image: url(../img/w3-blur.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+root { 
+    display: block;
+}
+
+div{ word-wrap: break-word;}
+
+/* 
+    my common divs
+*/
+invisible{display:none;}
+
+.keeping_div{
+    width:80%;
+    overflow: auto;
+    margin:0 10%;
+}
+.for_web{display:block;}
+.invisible,.for_mobile{display:none;}
+
+/* 
+    my comman game divs
+*/
+header, footer{height: 30px;width: 580px;padding-left: 30px;padding-right: 30px;}
+.label{font-family: 'Montserrat Alternates', sans-serif;font-weight: bold;line-height:30px;}
+#game_board{z-index:0;margin-left:30px;width:580px;height:580px;}
+.dialog_box{position: absolute;top:0;left:0px;z-index:5;width: 640px;height: 640px;display: flex;align-items: center;justify-content: center;background-color: rgba(255,255,255,0.7)}
+.dialog_box div{font-family: 'Montserrat Alternates', sans-serif;width: 200px;height: 200px;background-color: white;line-height:200px;font-size: 1em;text-align: center;}
+.right{ float:right;margin-right: 0px;}
+.left{ float:left;margin-left: 0px;}
+
+
+/* 
+    board divs
+*/
+.box {float: left;color:yellow;font-size: 0.1px;background-color:  #d5d5d5}
+.box.covered:hover{
+    cursor:pointer;
+     -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
+   opacity: 0.6;
+    text-line:100%;
+}
+.box:nth-child(2n+0) {
+    background-color:  #a7a7a7
+}
+.box:nth-child(3n+0) {background-color:  #777777}
+.box:nth-child(4n+0) {background-color:  #515151}
+.box:nth-child(5n+0) {background-color:  #8a8a8a}
+.box:nth-child(6n+0) {background-color: #bababa}
+.box:nth-child(7n+0) {background-color: #ededed}
+
+.right.chance {width: 20px;height: 20px;margin: 5px;}
+.right.chance:first{margin-right: 30px;}
+.box.required_color{width: 30px;height: 30px;}
+
+/* red */
+.box.color.red{
+    background-color: red;
+    color: red;
+}
+/* blue */
+.box.color.blue{
+background: rgb(73,155,234); /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  rgba(73,155,234,1) 0%, rgba(32,124,229,1) 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(73,155,234,1) 0%,rgba(32,124,229,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center,  rgba(73,155,234,1) 0%,rgba(32,124,229,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#207ce5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+color: blue;
+}
+
+/* yellow */
+.box.color.yellow{
+background: rgb(252,239,126); /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  rgba(252,239,126,1) 0%, rgba(241,218,54,1) 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(252,239,126,1) 0%,rgba(241,218,54,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center,  rgba(252,239,126,1) 0%,rgba(241,218,54,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcef7e', endColorstr='#f1da36',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+color: yellow;
+}
+
+/* brown */
+.box.color.brown{
+background: rgb(169,3,41); /* Old browsers */
+background: -moz-linear-gradient(-45deg,  rgba(169,3,41,1) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+color: brown;
+}
+
+/* gray */
+.box.color.aqua{
+background: rgb(240,249,255); /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  rgba(240,249,255,1) 0%, rgba(203,235,255,1) 47%, rgba(161,219,255,1) 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(240,249,255,1) 0%,rgba(203,235,255,1) 47%,rgba(161,219,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center,  rgba(240,249,255,1) 0%,rgba(203,235,255,1) 47%,rgba(161,219,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#a1dbff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+color: aqua;
+}
+
+/* green */
+.box.color.green{
+background: rgb(107,186,112); /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  rgba(107,186,112,1) 0%, rgba(107,186,112,1) 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(107,186,112,1) 0%,rgba(107,186,112,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center,  rgba(107,186,112,1) 0%,rgba(107,186,112,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6bba70', endColorstr='#6bba70',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+color: green;
+}
+
+/* purple */
+.box.color.purple{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff5db1+0,ef017c+100;Pink+3D+%231 */
+background: rgb(255,93,177); /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  rgba(255,93,177,1) 0%, rgba(239,1,124,1) 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,93,177,1) 0%,rgba(239,1,124,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center,  rgba(255,93,177,1) 0%,rgba(239,1,124,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5db1', endColorstr='#ef017c',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+color: purple;
+}
+
+
+
+
